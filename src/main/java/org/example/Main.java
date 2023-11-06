@@ -1,8 +1,9 @@
 package org.example;
 
-import org.example.Syntax.Car;
-import org.example.Syntax.Method;
-import org.example.Syntax.Syntax;
+import org.example.Syntax.*;
+
+import java.awt.image.PixelGrabber;
+import java.util.Scanner;
 
 public class Main {
     static void myMethod(String fName, int age) {
@@ -26,12 +27,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-        myMethod("John", 5);
-        myMethod("Pam", 64);
-        myMethod("Dwight", 34);
+//        myMethod("John", 5);
+//        myMethod("Pam", 64);
+//        myMethod("Dwight", 34);
 //        System.out.println(secondMethod(3));
-        secondMethod(5);
-        System.out.println(secondMethod(6));
+//        secondMethod(5);
+//        System.out.println(secondMethod(6));
 //        System.out.println(sumMethod(3, 4));
 //        sumMethod(5, 5);
 //        System.out.println(sumMethod(4,6));
@@ -55,8 +56,34 @@ public class Main {
 //        car.price = 400000;
 //        car.productionYear  = 2023;
 
-        Car  myCar = new Car();
-        System.out.println("ProductionYear: " + myCar.productionYear + ", Color: " + myCar.color + ", Price: " + myCar.price);
+//        Car  myCar = new Car();
+//        System.out.println("ProductionYear: " + myCar.productionYear + ", Color: " + myCar.color + ", Price: " + myCar.price);
+
+//        Student myObj = new Student();
+//        System.out.println("Name: " + myObj.fName);
+//        System.out.println("Age: " + myObj.age);
+//        System.out.println("Graduation Year: " + myObj.graduationYear);
+//        Person myPerson = new Person();
+//        myPerson.setName("Szymon");
+//        System.out.println(myPerson.getName());
+
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.print("Podaj swoje imię: ");
+//        String name = scanner.nextLine();
+//        System.out.print("Witaj " + name + "!!!!");
+//        scanner.close();
+
+//        Animal myAnimal = new Animal();
+//        Dog myDog = new Dog();
+//        Pig myPig = new Pig();
+//        myAnimal.animalSound();
+//        myDog.animalSound();
+//        myPig.animalSound();
+
+//        Pig myPig = new Pig();
+//        myPig.animalSound();
+//        myPig.sleep();
+
 
 
 
