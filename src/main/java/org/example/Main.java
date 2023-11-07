@@ -374,6 +374,8 @@ public class Main extends Thread {
         myMap.put("John", 5);
         myMap.put("Arnold", 23);
         System.out.println(myMap.size());
+        System.out.println(myMap.put("Marcin",4));
+        System.out.println(myMap);
     }
 }
 
