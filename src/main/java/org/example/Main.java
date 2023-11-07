@@ -363,12 +363,17 @@ public class Main extends Thread {
 //        String age = obj.readLine()
 //        System.out.println("Podaj swoje imię: ");
 //        StringBuffer:
-        StringBuffer sb = new StringBuffer();
-        sb.append("Helko");
-        sb.append("elo");
-        sb.append("siema");
-        String message = sb.toString();
-        System.out.println(message);
+//        StringBuffer sb = new StringBuffer();
+//        sb.append("Helko");
+//        sb.append("elo");
+//        sb.append("siema");
+//        String message = sb.toString();
+//        System.out.println(message);
+//        Next Example:
+        HashMap<String, Integer> myMap = new HashMap<>();
+        myMap.put("John", 5);
+        myMap.put("Arnold", 23);
+        System.out.println(myMap.size());
     }
 }
 
