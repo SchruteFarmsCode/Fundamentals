@@ -341,7 +341,7 @@ public class Main extends Thread {
 //Oblicz sume liczb w tablicy:
 //        int[] obj = {4, 5, 9, 2};
 //        int sum = 0;
-        int i;
+//        int i;
 //        for (int i = 0; i < obj.length; i++) { {
 //            sum += obj[i];
 //            System.out.println("Sum of table: " + sum);
@@ -370,12 +370,96 @@ public class Main extends Thread {
 //        String message = sb.toString();
 //        System.out.println(message);
 //        Next Example:
-        HashMap<String, Integer> myMap = new HashMap<>();
-        myMap.put("John", 5);
-        myMap.put("Arnold", 23);
-        System.out.println(myMap.size());
-        System.out.println(myMap.put("Marcin",4));
-        System.out.println(myMap);
+//        HashMap<String, Integer> myMap = new HashMap<>();
+//        myMap.put("John", 5);
+//        myMap.put("Arnold", 23);
+//        System.out.println(myMap.size());
+//        System.out.println(myMap.put("Marcin",4));
+//        System.out.println(myMap);
+//        Sprawdzanie czy rok jest przestępny(leapYear)
+
+//        int year = 2024;
+//        if ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0)) {
+//            System.out.println(year + " --> to rok przestępny");
+//        }else {
+//            System.out.println(year + " --> to nie rok przestępny");
+//    }
+//Użyj rekurencji aby dodać wszystkie liczby od 5 do 10:
+
+//        int result = sum(5, 10);
+//        System.out.println(result);
+//    }
+//    public static int sum(int start, int end) {
+//        if( end >start) {
+//            return end + sum(start, end - 1);
+//        }else {
+//            return end;
+//        }
+//        Przykład piramidy:
+//        for (int j = 1; j <= 5; j++) {
+//            for (int k = 1; k <= j; k++) {
+//                System.out.print("*");
+//            }
+//            System.out.println();
+//        }
+//        aa:
+//        for (int j = 1; j <= 3; j++) {
+//            bb:
+//            for (int k = 1; k <= 3; k++) {
+//                if(j == 2 && k == 2) {
+//                    break aa;
+//                }
+//                System.out.println(j + " " + k);
+//            }
+//        }
+//     infinitive loop:
+//        for (;;) {
+//            System.out.println("Petla bezokolicznikowa");
+//        }
+//   Petla while:
+//        int j = 1;
+//        while(j <= 10) {
+//            System.out.println(j);
+//            j++;
+//        }
+//    Petla while nieskończona:
+//        int k = 1;
+//        while (true) {
+//            System.out.println("Nieskończona, aż się skończy pamięć ");
+//        }
+
+//        for (int j = 1; j <= 10 ; j++) {
+//            if(j == 5) {
+//                break;
+//            }
+//            System.out.println(j);
+//
+//        }
+//        for (int j = 0; j <= 10; j++) {
+//            if (j == 7) {
+//                continue;
+//            }
+//            System.out.println(j);
+
+//        int k = 1;
+//        do{
+//            if (k == 5) {
+//                k++;
+//                continue;
+//            }
+//            System.out.println(k);
+//            k++;
+//        }while (k <= 10);
+
+       HashMap<String, Integer> obj = new HashMap();
+       obj.put("Andrzej Morawa", 34);
+       obj.put("Mietek Żul", 25);
+       obj.put("Renaugh Oklash", 47);
+
+        System.out.println(obj);
+
+
+
     }
 }
 
