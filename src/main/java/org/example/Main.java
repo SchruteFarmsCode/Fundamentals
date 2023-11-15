@@ -1,8 +1,6 @@
 package org.example;
 
-import org.example.DataStructures.BinarySearchTree;
-
-import java.util.HashMap;
+import org.example.OOP.*;
 
 public class Main {
 //     static void myMethod(String fName, int age) {
@@ -154,17 +152,90 @@ public class Main {
 //        System.out.println("In-order traversal of BST:");
 //        bst.inOrderTraversal();
         //HashMap
-        HashMap<String, Integer> myHashMap = new HashMap<>();
-        myHashMap.put("one", 1);
-        myHashMap.put("two", 2);
-        myHashMap.put("three", 3);
-        //Pobieranie wartości na podstawie klucza:
-        System.out.println("Value for key 'two': " + myHashMap.get("two"));
+//        HashMap<String, Integer> myHashMap = new HashMap<>();
+//        myHashMap.put("one", 1);
+//        myHashMap.put("two", 2);
+//        myHashMap.put("three", 3);
+//        Pobieranie wartości na podstawie klucza:
+//        System.out.println("Value for key 'two': " + myHashMap.get("two"));
         //Sprawdzanie czy klucz istnieje:
-        System.out.println("Contains key 'four': " + myHashMap.containsKey("four"));
-        //Usuwanie elementu:
-        myHashMap.remove("three");
-        System.out.println(myHashMap);
+//        System.out.println("Contains key 'four': " + myHashMap.containsKey("four"));
+//        Usuwanie elementu:
+//        myHashMap.remove("three");
+//        System.out.println(myHashMap);
+//Matrix(macierz):
+//        int[][] matrix = {
+//                {1, 2, 3},
+//                {4, 5, 6},
+//                {7, 8, 9}
+//        };
+//        System.out.println(matrix);
+
+//        ExampleClass arg = new ExampleClass();
+//        arg.display();
+//        System.out.println(a);
+
+        //Next:
+//        Bicycle bicycle = new Bicycle();
+//        bicycle.changeGear(2);
+//        bicycle.speedUp(3);
+//        bicycle.applyBrakes(1);
+//
+//        System.out.println("Bicycle present state :");
+//        bicycle.printStates();
+//
+//        Bicycle bike = new Bicycle();
+//        bicycle.changeGear(1);
+//        bicycle.speedUp(4);
+//        bicycle.applyBrakes(3);
+//
+//        System.out.println("Bike present state :");
+//        bike.printStates();
+        //Przykład polimorfizmu z wykorzystaniem klasy Sum:
+//        Sum s = new Sum();
+//        System.out.println(s.sum(10, 20));
+//        System.out.println(s.sum(10, 20, 30));
+//        System.out.println(s.sum(10.5, 20.5));
+        //OOP wykorzystanie klasy Dog:
+
+//        Dog Luna = new Dog("Luna", "Kaukaz", 6, "black");
+//        System.out.println(Luna.toString());
+
+//Dezerializacja:
+//        File myFile = new File("cross.txt");
+//        ObjectInputStream inObj = new ObjectInputStream(myFile);
+//        Object obj = inObj.readObject();
+//        System.out.println(obj);
+        //fun
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.print("Podaj imię: ");
+//        String name = scanner.nextLine();
+//        System.out.println("Witaj " + name + "!!!!");
+//        System.out.print("Podaj wiek: " );
+//        int age = scanner.nextInt();
+//        if (age < 18){
+//            System.out.println("Denied akcess!! You're too young!!: " + age + " years");
+//        }else {
+//            System.out.println("Akcess grated!! You have of legal age: " + age + " years");
+//        }
+//        scanner.close();
+        //Example:
+//        Person personFirst = new Person("Andrzej", 23);
+//        Person personSecond = new Person("Ryszard", 65);
+//        personFirst.printDetails();
+//        personSecond.printDetails();
+//        personFirst.setName("Geniek");
+//        System.out.println("Name has been changed to: " + personFirst.getName());
+//        personFirst.printDetails();
+
+        //Example:
+        Text obj = new Text();
+        obj.get().display();
+
+        //Example:
+        DeliveryBoy deliveryBoy = DeliveryBoy.getDelivery();
+        deliveryBoy.deliver();
+
 
         }
     }
