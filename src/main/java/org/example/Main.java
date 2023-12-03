@@ -1,11 +1,20 @@
 package org.example;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.NoSuchElementException;
+import JavCollections.*;
+
+import javax.print.attribute.EnumSyntax;
+import java.awt.print.Book;
+import java.io.FileOutputStream;
+import java.io.ObjectOutput;
+import java.io.ObjectOutputStream;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main {
+    //metoda do uruchomienia Garbage Collectora:
+//    public void finalize() {
+//        System.out.println("object is garbage collected");
+//    }
 //     static void myMethod(String fName, int age) {
 //        System.out.println(fName + " Carell: " + age + " lat" );
 //
@@ -527,62 +536,380 @@ public class Main {
         //Streams:
 
         // create a list of integers
-        List<Integer> number = Arrays.asList(2, 3, 4, 5);
+//        List<Integer> number = Arrays.asList(2, 3, 4, 5);
 
         //demostration of map method
-        List<Integer> square = number.stream().map(x -> x*x).collect(Collectors.toList());
-        System.out.println(square);
+//        List<Integer> square = number.stream().map(x -> x*x).collect(Collectors.toList());
+//        System.out.println(square);
 
         //create a list of String
-        List<String> names = Arrays.asList("Reflection", "Collection", "Stream");
-        System.out.println(names);
+//        List<String> names = Arrays.asList("Reflection", "Collection", "Stream");
+//        System.out.println(names);
 
         //demonstation of filter method
 //        List<String> result = names.stream().filter(s -> s.startsWith("R")).collect(Collectors.toList());
 //        System.out.println(result);
 
         //demostration of sorted method
-        List<String> show = names.stream().sorted().collect(Collectors.toList());
-        System.out.println(show);
+//        List<String> show = names.stream().sorted().collect(Collectors.toList());
+//        System.out.println(show);
 
         //create a list of integers
-        List<Integer> numbers = Arrays.asList(2, 3, 4, 5, 3);
+//        List<Integer> numbers = Arrays.asList(2, 3, 4, 5, 3);
 
         //collect method returns a set
 //        Set<Integer> squareSet = numbers.stream().map(z -> z * z)).collect(Collectors.toSet());
 //        System.out.println(squareSet);
 
         //demonstation of forEach method
-        number.stream().map(x -> x * x).forEach(y -> System.out.println(y));
+//        number.stream().map(x -> x * x).forEach(y -> System.out.println(y));
 
         //demonstation of reduce method
-        int even = number.stream().filter(x -> x % 2 == 0).reduce(0, (ans, i) -> ans + i);
-        System.out.println(even);
+//        int even = number.stream().filter(x -> x % 2 == 0).reduce(0, (ans, i) -> ans + i);
+//        System.out.println(even);
 
-        List<String> myList = Arrays.asList("Lato", "Koniec", "Wiosna", "Zima");
-        long result = myList.stream().filter(z -> z.endsWith("a")).count();
-        System.out.println(result);
+//        List<String> myList = Arrays.asList("Lato", "Koniec", "Wiosna", "Zima");
+//        long result = myList.stream().filter(z -> z.endsWith("a")).count();
+//        System.out.println(result);
 
         //collect
-        List<String> word = Arrays.asList("Java", "is", "wonderful", "and", "powerful");
-        String result2 = word.stream().collect(Collectors.joining());
+//        List<String> word = Arrays.asList("Java", "is", "wonderful", "and", "powerful");
+//        String result2 = word.stream().collect(Collectors.joining());
 
         //Za pomocą method reduce() obliczam sumy elementów w streamie:
-        List<Integer> number2 = Arrays.asList(1, 2, 3, 4, 5);
-        int sum = number2.stream().reduce(0, (a, b)-> a + b);
-        System.out.println("sum: " + sum);
+//        List<Integer> number2 = Arrays.asList(1, 2, 3, 4, 5);
+//        int sum = number2.stream().reduce(0, (a, b)-> a + b);
+//        System.out.println("sum: " + sum);
 
         //Znalezienie maksimum:
-        List<Integer> num = Arrays.asList(2, 8, 16, 25, 5);
-        int max = num.stream().reduce((a, b) -> Integer.max(a, b)).orElseThrow(() -> new NoSuchElementException());
+//        List<Integer> num = Arrays.asList(2, 8, 16, 25, 5);
+//        int max = num.stream().reduce((a, b) -> Integer.max(a, b)).orElseThrow(() -> new NoSuchElementException());
 
         //Łaczenie napisów:
-        List<String> words = Arrays.asList("Java", "is", "wonderful");
-        String combine = words.stream().reduce((s1, s2) -> s1 + " " + s2).orElse("");
-        System.out.println(combine);
+//        List<String> words = Arrays.asList("Java", "is", "wonderful");
+//        String combine = words.stream().reduce((s1, s2) -> s1 + " " + s2).orElse("");
+//        System.out.println(combine);
+//
+        //Creating TreSet:
+//        Set<String> set = new TreeSet<String>();
+//        set.add("Janek");
+//        set.add("Tadek");
+//        set.add("Marek");
+//        set.add("Janek");
+//        Iterator<String> itr = set.iterator();
+//        while (itr.hasNext()) {
+//            System.out.println(itr.next());
+//        }
+//        Set<Integer> sett = new TreeSet<Integer>();
+//        sett.add(12);
+//        sett.add(56);
+//        sett.add(12);
+//        sett.add(124);
+//        Iterator<Integer> ittr = sett.iterator();
+//        while (ittr.hasNext()) {
+//            System.out.println(ittr.next());
+//        }
+//        ArrayList<String> list = new ArrayList<>();
+//        list.add("Bronek");
+//        list.add("Anka");
+//        list.add("Bozena");
+//        list.add("Bozena");
+//        Collections.sort(list);
+//        System.out.println("Lista po sortowaniu: " + list);
+//        System.out.println(list.get(0));
+//        System.out.println("Pokaż indeks 0 wyżej: " + list);
+//        System.out.println(list.set(2, "Zmieniam indeks 2 na Mariole"));
+//        System.out.println();
+//
+//        Iterator<String> iterator = list.iterator();
+//        while (iterator.hasNext()) {
+//            System.out.println(iterator.next());
+//        }
+//        System.out.println("Teraz przy użyciu pętli for each czyli iter");
+//        for (String s : list) {
+//            System.out.println(s);
+//        }
 
+        //Serializacja i deserializacja:
+        ArrayList<String> al = new ArrayList<>();
+        al.add("Ravi");
+        al.add("Vijay");
+        al.add("Alay");
+
+        try {
+            FileOutputStream fos = new FileOutputStream("file");
+            ObjectOutputStream obj = new ObjectOutputStream(fos);
+        }catch (Exception e) {
+            System.out.println();
+        }
+
+        //Iteracja w odwotnej kolejności:
+//        ArrayList<String> myArrayList = new ArrayList<>();
+//        myArrayList.add("lato");
+//        myArrayList.add("wiosna");
+//        myArrayList.add("zima");
+//        myArrayList.add("jesien");
+//        ListIterator<String> iterator = myArrayList.listIterator(myArrayList.size());
+//        while (iterator.hasPrevious()) {
+//            String str = iterator.previous();
+//            System.out.println(str);
+//        }
+
+        //LinkedList
+//        LinkedList<String> myLinkedList = new LinkedList<>();
+//        myLinkedList.add("Tomek");
+//        myLinkedList.add("Romek");
+//        myLinkedList.add("Atomek");
+//        System.out.println("Moja LinkedLista: " + myLinkedList);
+//        myLinkedList.add(1, "Bartosz");
+//        System.out.println("Moja lista po zmianie 1 pozycji: " + myLinkedList);
+//
+//        LinkedList<String> myLinkedList2 = new LinkedList<>();
+//        myLinkedList2.add("Xavi");
+//        myLinkedList2.add("Messi");
+//        myLinkedList2.add("Neymar");
+//        System.out.println("Moja linkedList2: " + myLinkedList2);
+//        myLinkedList2.addAll(myLinkedList);
+//        System.out.println("Moja linkedlist2 po dodaniu wszystkiego z linkedlist1: " + myLinkedList2);
+
+        //Konwersja ArrayList na Array:
+//        List<String> fruitList = new ArrayList<>();
+//        fruitList.add("Mango");
+//        fruitList.add("Kaki");
+//        fruitList.add("DragonFruit");
+//        String[] tableFruit = fruitList.toArray(new String[])
+//        System.out.println("Printing Array: " + Arrays.toString(tableFruit));
+//        System.out.println("Printing list: " + fruitList);
+
+        // Przykład listy, gdzie dodajemy książki:
+//        List<MyBooks> list = new ArrayList<MyBooks>();
+//        MyBooks b1 = new MyBooks(101, "Two Tower", "Stephen King", "United kingdom Publisher",303);
+//        MyBooks b2 = new MyBooks(102, "The Picture of Dorian Gray", "Wilde Oscar", "Poltext", 450);
+//        MyBooks b3 = new MyBooks(103, "Oscar and the Lady Rose", "Eric Emanuel", "Atlantic Books", 100);
+//        list.add(b1);
+//        list.add(b2);
+//        list.add(b3);
+//        for (MyBooks myBooks : list) {
+//            System.out.println(myBooks);
+//        }
+
+        //Przykład of set,where adding books:
+//        HashSet<MyBooks> list = new HashSet<MyBooks>();
+//        MyBooks b1 = new MyBooks(101, "Two Tower", "Stephen King", "United kingdom Publisher",303);
+//        MyBooks b2 = new MyBooks(102, "The Picture of Dorian Gray", "Wilde Oscar", "Poltext", 450);
+//        MyBooks b3 = new MyBooks(103, "Oscar and the Lady Rose", "Eric Emanuel", "Atlantic Books", 100);
+//        list.add(b1);
+//        list.add(b2);
+//        list.add(b3);
+//        for (MyBooks myBooks : list) {
+//            System.out.println("My HashSet: " + myBooks);
+//        }
+
+        // TreeSet:
+//        TreeSet<String> myTreeSet = new TreeSet<>();
+//        myTreeSet.add("Flower");
+//        myTreeSet.add("Garden");
+//        myTreeSet.add("AppleTree");
+//        Iterator<String> iterator = myTreeSet.iterator();
+//        while (iterator.hasNext()) {
+//            System.out.println("MyTreeSet: " + iterator.next());
+//        }
+
+//        TreeSet<String> alphabet = new TreeSet<>();
+//        alphabet.add("A");
+//        alphabet.add("B");
+//        alphabet.add("C");
+//        alphabet.add("D");
+//        alphabet.add("E");
+//        System.out.println("Orginal settings: " + alphabet);
+//        System.out.println("Reverse Set: " + alphabet.descendingSet());
+//        System.out.println("Zestaw nagłówków: " + alphabet.headSet("C", true));
+//        System.out.println("SubSet: " + alphabet.subSet("A", false, "E", true));
+//        System.out.println("TailSet: " + alphabet.tailSet("C", false));
+
+        //Deque:
+//        Deque<String> deque = new ArrayDeque<>();
+//        deque.offer("arvind");
+//        deque.offer("vimal");
+//        deque.offer("mukul");
+//        deque.offer("Jai");
+//        System.out.println("After offerFirst traversal... ");
+//        for (String s : deque) {
+//            System.out.println(s);
+//        }
+//        deque.pollLast();
+//        System.out.println("After pollLast()Traversal");
+
+        //Map:
+//        Map<Integer, String> myMap = new HashMap<>();
+//        myMap.put(1, "Andrzej");
+//        myMap.put(4, "Konwalia");
+//        myMap.put(2, "Aneta");
+//        myMap.put(7, "Hanna");
+//
+//        Set set  = myMap.entrySet();
+//        Iterator itr = set.iterator();
+//        while (itr.hasNext()) {
+//            Map.Entry entry = (Map.Entry)itr.next();
+//            System.out.println(entry.getKey() + " " + entry.getValue());
+//        }
+
+        // Example with Map.Entry iteracja:
+//        Map<String, Integer> map = new HashMap<>();
+//        map.put("Jan", 14);
+//        map.put("Grzegorz", 17);
+//        map.put("Andrzej", 26);
+//        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+//            String key = entry.getKey();
+//            Integer value = entry.getValue();
+//            System.out.println("Key: " + key + "Value: " + value);
+//        }
+        //Example with Map.Entry aktualizacja wartości:
+//        Map<String, Integer> map1 = new HashMap<>();
+//        map1.put("Opel", 2014);
+//        map1.put("Volkswagen", 2002);
+//        map1.put("Benzer", 2007);
+//        for (Map.Entry<String, Integer> entry1 : map1.entrySet()) {
+//            if (entry1.getKey().equals("someKey")) {
+//                entry1.setValue(42);
+//            }
+//            System.out.println(map1);
+//        }
+        //Example with Map.Entry removing elements:
+//        Map<String, Integer> map2 = new HashMap<>();
+//        map2.put("Kia", 2022);
+//        map2.put("Fiat", 2013);
+//        map2.put("Toyota", 2018);
+//
+//        Iterator<Map.Entry<String, Integer>> iterator = map2.entrySet().iterator();
+//        while (iterator.hasNext()) {
+//            Map.Entry<String, Integer> entry = iterator.next();
+//            if (entry.getValue() < 0) {
+//                iterator.remove();
+//            }
+//        }
+        // comparingByKey:
+//        Map<String, Integer> map3 = new HashMap<>();
+//        map3.put("Opel", 2014);
+//        map3.put("Volkswagen", 2002);
+//        map3.put("Benzer", 2007);
+//
+//        map3.entrySet().stream().sorted(Map.Entry.comparingByKey()).forEach(System.out::println);
+
+        //comparingByValue() in Descending Order:
+//        Map<Integer, String> map4 = new HashMap<Integer, String>();
+//        map4.put(100, "Kayak");
+//        map4.put(102, "SkyScanner");
+//        map4.put(103, "Triply");
+//
+//        map4.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder())).forEach(System.out::println);
+
+        //TreeMap:
+//        TreeMap<String, Integer> treeMap = new TreeMap<>();
+//        treeMap.put("John", 12);
+//        treeMap.put("Wick", 24);
+//        treeMap.put("Stanley", 65);
+//        for (Map.Entry<String, Integer> entry : treeMap.entrySet()) {
+//            System.out.println("Key: " + entry.getKey() + " " + "Value: " + entry.getValue());
+//        }
+//        System.out.println("Map descending: " + treeMap.descendingMap());
+//        System.out.println("headMap: " + treeMap.headMap("Stanley", true));
+
+        //EnumSet Example: allof() and noneOf():
+//       Set<Days> set = EnumSet.allOf(Days.class);
+//        System.out.println(set);
+//        Set<Days> set2 = EnumSet.noneOf(Days.class);
+//        System.out.println(set2);
+
+        //EnumMap:
+//        EnumMap<Days, String> map = new EnumMap<Days, String>(Days.class);
+//        map.put(Days.MONDAY, "1");
+//        map.put(Days.TUESDAY, "2");
+//        map.put(Days.WEDNESDAY, "3");
+//        map.put(Days.THURSDAY, "4");
+//        for (Map.Entry<Days, String> entry : map.entrySet()) {
+//            System.out.println(entry.getKey() + " " + entry.getValue());
+//        }
+//        TestGarbage1 s1 = new TestGarbage1();
+//        TestGarbage1 s2 = new TestGarbage1();
+//        s1 = null;
+//        s2 = null;
+//        System.gc();
+
+        //Threads:
+//        Multi t1 = new Multi();
+//        t1.start();
+
+        //Threads next
+//        Multi3 m1 = new Multi3();
+//        Thread t2 = new Thread(m1);
+//        t2.start();
+
+        //Thread myExample:
+//        MyThread myThread = new MyThread();
+//        Thread thread = new Thread(myThread, "My new thread");
+//        thread.start();
+//        String str = thread.getName();
+//        System.out.println(str);
+
+        //Example method Sleep(): on the custom thread
+//        TestSleepMethod1 t1 = new TestSleepMethod1();
+//        TestSleepMethod1 t2 = new TestSleepMethod1();
+//        t1.start();
+//        t2.start();
+
+        //Example of join() with Thread
+//        ThreadJoin th1 = new ThreadJoin();
+//        ThreadJoin th2 = new ThreadJoin();
+//        ThreadJoin th3 = new ThreadJoin();
+//
+//        th1.start();
+//        try {
+//            System.out.println("The current thread name is: " + Thread.currentThread().getName());
+//            th1.join();
+//        }catch (Exception e) {
+//            System.out.println(e);
+//        }
+//        th2.start();
+//        try {
+//            System.out.println("The current thread name is: " + Thread.currentThread().getName());
+//            th2.join();
+//        }catch (Exception e) {
+//            System.out.println(e);
+//        }
+//        th3.start();
+//        try {
+//            System.out.println("The current thread name is: " + Thread.currentThread().getName());
+//            th3.join();
+//        }catch (Exception e) {
+//            System.out.println(e);
+//        }
+
+        //Example Priorty thread:
+        ThreadPriorityExample th1 = new ThreadPriorityExample();
+        ThreadPriorityExample th2 = new ThreadPriorityExample();
+        ThreadPriorityExample th3 = new ThreadPriorityExample();
+
+        System.out.println("Priority of the thread th2 is:" + th2.getPriority());
+        System.out.println("Priority of the thread th2 is:" + th2.getPriority());
+        System.out.println("Priority of the thread th3 is:" + th3.getPriority());
+
+        th1.setPriority(6);
+        th2.setPriority(3);
+        th3.setPriority(9);
+
+        System.out.println("Priority of the thread th1 is: " + th1.getPriority());
+        System.out.println("Priority of the thread th2 is: " + th2.getPriority());
+        System.out.println("Priority of the thread th3 is: " + th3.getPriority());
+
+        System.out.println("Currently Executing The Thread:" + Thread.currentThread().getName());
+        System.out.println("Priority of the main thread is:" + Thread.currentThread().getPriority());
+
+        Thread.currentThread().setPriority(10);
+        System.out.println("Priority of the main thread is: " + Thread.currentThread().getPriority());
 
     }
+
     }
 
 
